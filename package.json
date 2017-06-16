@@ -1,0 +1,29 @@
+{
+  "name": "loggeraas-node-wrapper",
+  "version": "1.0.0",
+  "description": "This package allows you to easy configure and consume a logger-aas api",
+  "main": "loggeraas-node-wrapper.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "standard": "^10.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agm-dev/loggeraas-node-wrapper.git"
+  },
+  "keywords": [
+    "wrapper",
+    "node wrapper",
+    "logger aas wrapper"
+  ],
+  "author": "Adrián Gonzalo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agm-dev/loggeraas-node-wrapper/issues"
+  },
+  "homepage": "https://github.com/agm-dev/loggeraas-node-wrapper#readme"
+}
