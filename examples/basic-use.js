@@ -4,7 +4,8 @@ const config = {
   path: '/api/v1/logs',
   method: 'POST',
   hash: 'loggeraas-node-wrapper-examples',
-  enabled: true
+  enabled: true,
+  verbose: true
 }
 const l = logger(config)
 

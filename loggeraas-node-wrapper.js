@@ -17,6 +17,7 @@ const logger = function (config) {
   const method = config.method || 'POST'
   const hash = config.hash
   const enabled = config.enabled
+  const verbose = config.verbose || false;
 
   // This logs and saves on loggeraas api you log message:
   function log (logData = '') {
@@ -44,11 +45,11 @@ const logger = function (config) {
       })
 
       res.on('end', () => {
-        if (res.statusCode === 200) {
+        if (res.statusCode === 200 && verbose) {
           const responseObject = JSON.parse(result)
           const id = responseObject.data[0]._id
           console.log('loggerass-node-wrapper: your data has been recorded with id ' + id)
-        } else {
+        } else if (res.statusCode !== 200){
           console.log('loggerass-node-wrapper: error on logging your data: ' + result)
         }
       })
