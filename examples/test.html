@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test Loggeraas Browser Wrapper</title>
+  </head>
+  <body>
+    <input type="text" name="text" id="text" value="" placeholder="write your sentence"/>
+    <button type="button" name="button" id="log">Log this</button>
+    <script type="text/javascript" src="../loggeraas-browser-wrapper.js"></script>
+    <script type="text/javascript">
+      console.log('configuration of wrapper');
+      const l = logger({
+          host: 'logger.assa.services',
+          path: '/api/v1/logs',
+          method: 'POST',
+          hash: 'loggeraas-browser-wrapper-tests',
+          enabled: true,
+          verbose: true
+      });
+
+      window.onload = function() {
+        console.log('page load');
+        document.querySelector('#log').addEventListener('click', function(){
+          let text = document.querySelector('#text').value;
+          l.log(text);
+        }, false);
+        console.log('added event listener to translate button');
+      }
+    </script>
+  </body>
+</html>

@@ -4,12 +4,17 @@
   "description": "This package allows you to easy configure and consume a logger-aas api",
   "main": "loggeraas-node-wrapper.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "browserify": "browserify export-to-browser.js -o loggeraas-browser-wrapper.js",
+    "uglify": "uglify -s loggeraas-browser-wrapper.js -o loggeraas-browser-wrapper.min.js",
+    "build": "npm run browserify && npm run uglify"
   },
   "dependencies": {},
   "devDependencies": {
+    "browserify": "^14.4.0",
     "jest": "^20.0.4",
-    "standard": "^10.0.2"
+    "standard": "^10.0.2",
+    "uglify": "^0.1.5"
   },
   "repository": {
     "type": "git",
